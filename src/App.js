@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Mars from './pages/Mars';
+import Earth from './pages/Earth';
+import Header from './components/Header';
+
+import './sass/App.scss';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header/>
+      <Routes>
+    <Route path="/"  element={<Earth/>}/>
+    <Route path="Earth"  element={<Earth/>}/>
+      <Route path="Mars" element={<Mars/>}/>
+    
+    
+    
+      </Routes>
+    </Router>
   );
 }
 

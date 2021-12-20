@@ -1,0 +1,17 @@
+@import "Footer";
+@import "Main";
+@import "Header";
+
+:root{
+--white:#FFFFFF;
+--Background:#070724;
+
+
+}
+
+body{
+background-image: url('background-stars.svg');
+background-color:var(--Background);
+color:var(--white)
+    
+}
