@@ -8,12 +8,12 @@ export default function Header() {
        <ul className="header--planetlist">
             <li className="header--planets"><Link to="Mercury">MERCURY</Link></li>
             <li className="header--planets"><Link to="Venus">VENUS</Link></li>
-            <li className="header--planets"><Link to="/Earth">EARTH</Link></li>
+            <li className="header--planets"><Link to="Earth">EARTH</Link></li>
             <li className="header--planets"><Link to="Mars">MARS</Link></li>
-            <li className="header--planets">JUPITER</li>
-            <li className="header--planets">SATURN</li>
-            <li className="header--planets">URANUS</li>
-            <li className="header--planets">NEPTUNE</li>
+            <li className="header--planets"><Link to="Jupiter">JUPITER</Link></li>
+            <li className="header--planets"><Link to="Saturn">SATURN</Link></li>
+            <li className="header--planets"><Link to="Uranus">URANUS</Link></li>
+            <li className="header--planets"><Link to="Neptune">NEPTUNE</Link></li>
 
        </ul>
             
