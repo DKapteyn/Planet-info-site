@@ -1,13 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Jupiter() {
+export default function Jupiter(props) {
     return (
         <>
            <Main
-           planet = {planet[4].name}
-            para = {planet[4].overview.content}
-            image = {planet[4].images.planet}
+           planetNumber={4}
            
            />
            <Footer

@@ -1,15 +1,12 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Venus() {
+export default function Venus(props) {
     return (
         <>
            <Main
-           planet = {planet[1].name}
-            para = {planet[1].overview.content}
-            image = {planet[1].images.planet}
-           
-           />
+           planetNumber = {1}
+          />
            <Footer
            rotation = {planet[1].rotation}
            revolution={planet[1].revolution}

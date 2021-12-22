@@ -1,13 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Earth() {
+export default function Earth(props) {
     return (
         <>
            <Main
-           planet = {planet[2].name}
-            para = {planet[2].overview.content}
-            image = {planet[2].images.planet}
+           planetNumber={2}
            
            />
            <Footer

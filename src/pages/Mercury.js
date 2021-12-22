@@ -1,13 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Mercury() {
+export default function Mercury(props) {
     return (
         <>
            <Main
-           planet = {planet[0].name}
-            para = {planet[0].overview.content}
-            image = {planet[0].images.planet}
+           planetNumber= {0}
            
            />
            <Footer

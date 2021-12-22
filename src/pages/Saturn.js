@@ -1,13 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Saturn() {
+export default function Saturn(props) {
     return (
         <>
            <Main
-           planet = {planet[5].name}
-            para = {planet[5].overview.content}
-            image = {planet[5].images.planet}
+           planetNumber = {5}
            
            />
            <Footer

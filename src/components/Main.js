@@ -1,17 +1,59 @@
+import planet from "./Data";
+import React, { useState } from "react";
+
 export default function Main(props) {
-    return (
-        <div>
-            <img src={props.image} alt="Outer Earth" className="earth" />
-            <div className="planet--text">
-                <h1 className="main--title">
-                {props.planet}
-                
-                
-                </h1>
-                <p className="main--para">
-                {props.para}
-                </p>
-            </div>
+  const [planetState, setPlanetState] = useState({
+    img: "planet",
+    para: "overview",
+  });
+
+  function handleOverview() {
+    setPlanetState({
+      img: "planet",
+      para: "overview",
+    });
+  }
+
+  function handleStructure() {
+    setPlanetState({
+      img: "internal",
+      para: "structure",
+    });
+  }
+
+  function handleSurface() {
+    setPlanetState({
+      img: "geology",
+      para: "geology",
+    });
+  }
+
+  return (
+    <div>
+      <div className="infoBoxes">
+        <div onClick={handleOverview} className="overview">
+          OVERVIEW
         </div>
-    )
+        <div onClick={handleStructure} className="structure">
+          STRUCTURE
+        </div>
+        <div onClick={handleSurface} className="surface">
+          SURFACE
+        </div>
+      </div>
+
+      <img
+        src={planet[props.planetNumber].images[planetState.img]}
+        alt="Outer Earth"
+        className="earth"
+      />
+
+      <div className="planet--text">
+        <h1 className="main--title">{planet[props.planetNumber].name}</h1>
+        <p className="main--para">
+          {planet[props.planetNumber][planetState.para].content}
+        </p>
+      </div>
+    </div>
+  );
 }

@@ -1,14 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Uranus() {
+export default function Uranus(props) {
     return (
         <>
            <Main
-           planet = {planet[6].name}
-            para = {planet[6].overview.content}
-            image = {planet[6].images.planet}
-           
+           planetNumber = {6}
            />
            <Footer
            rotation = {planet[6].rotation}

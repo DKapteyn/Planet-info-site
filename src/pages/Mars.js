@@ -1,15 +1,14 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Mars() {
+export default function Mars(props) {
+    
+    
     return (
         <>
-           <Main
-           planet = {planet[3].name}
-            para = {planet[3].overview.content}
-            image = {planet[3].images.planet}
-           
-           />
+         
+           <Main 
+           planetNumber = {3}/>
            <Footer
            rotation = {planet[3].rotation}
            revolution={planet[3].revolution}

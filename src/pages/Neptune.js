@@ -1,13 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Neptune() {
+export default function Neptune(props) {
     return (
         <>
            <Main
-           planet = {planet[7].name}
-            para = {planet[7].overview.content}
-            image = {planet[7].images.planet}
+           planetNumber = {7}
            
            />
            <Footer
