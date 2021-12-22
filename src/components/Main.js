@@ -1,4 +1,4 @@
-import planet from "./Data";
+import planetData from "../Data";
 import React, { useState } from "react";
 
 export default function Main(props) {
@@ -43,15 +43,15 @@ export default function Main(props) {
       </div>
 
       <img
-        src={planet[props.planetNumber].images[planetState.img]}
+        src={planetData[props.planetNumber].images[planetState.img]}
         alt="Outer Earth"
         className="earth"
       />
 
       <div className="planet--text">
-        <h1 className="main--title">{planet[props.planetNumber].name}</h1>
+        <h1 className="main--title">{planetData[props.planetNumber].name}</h1>
         <p className="main--para">
-          {planet[props.planetNumber][planetState.para].content}
+          {planetData[props.planetNumber][planetState.para].content}
         </p>
       </div>
     </div>
