@@ -1,11 +1,11 @@
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 import planet from '../components/Data'
-export default function Mercury(props) {
+export default function Planet(props) {
     return (
-        <>
+        <div className={props.class}>
            <Main
-           planetNumber= {0}
+           planetNumber= {props.planetNumber}
            
            />
            <Footer
@@ -16,6 +16,6 @@ export default function Mercury(props) {
 
            
            /> 
-        </>
+        </div>
     )
 }

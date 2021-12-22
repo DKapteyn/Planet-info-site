@@ -1,14 +1,5 @@
-import Mercury from "./pages/Mercury";
-import Venus from "./pages/Venus";
-import Earth from "./pages/Earth";
-import Mars from "./pages/Mars";
-import Jupiter from "./pages/Jupiter";
-import Saturn from "./pages/Saturn";
-import Uranus from "./pages/Uranus";
-import Neptune from "./pages/Neptune";
-import Main from "./components/Main";
+
 import Header from "./components/Header";
-import React, { useState } from "react";
 import "./sass/App.scss";
 import {
   BrowserRouter as Router,
@@ -16,6 +7,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import Planet from "./pages/Planet";
 
 function App() {
   return (
@@ -23,14 +15,27 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="Earth" />} />
-        <Route path="Mercury" element={<Mercury />} />
-        <Route path="Venus" element={<Venus />} />
-        <Route path="Earth" element={<Earth />} />
-        <Route path="Mars" element={<Mars />} />
-        <Route path="Jupiter" element={<Jupiter />} />
-        <Route path="Saturn" element={<Saturn />} />
-        <Route path="Uranus" element={<Uranus />} />
-        <Route path="Neptune" element={<Neptune />} />
+        <Route path="Mercury" element={
+        <Planet
+        class = "mercury"
+        planetNumber={0} />
+        }/>
+      
+        <Route path="Venus" element={<Planet
+        planetNumber={1}
+        class = "venus" />} />
+        <Route path="Earth" element={<Planet 
+        planetNumber={2} />} />
+        <Route path="Mars" element={<Planet
+        planetNumber={3} />} />
+        <Route path="Jupiter" element={<Planet
+        planetNumber={4} />} />
+        <Route path="Saturn" element={<Planet
+        planetNumber={5} />} />
+        <Route path="Uranus" element={<Planet 
+        planetNumber={6} />} />
+        <Route path="Neptune" element={<Planet
+        planetNumber={7} />} />
       </Routes>
     </Router>
   );
