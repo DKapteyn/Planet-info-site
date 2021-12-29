@@ -1,0 +1,122 @@
+@import "Mixins";
+
+.main--container {
+  display: grid;
+  grid-template-areas:
+    "planetPic  planetText"
+    "planetPic source"
+    "planetPic infoBoxes";
+  grid-auto-columns: 2fr 1fr;
+  padding: 0px 165px;
+  height: 670px;
+}
+
+.infoBoxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: infoBoxes;
+  align-self: flex-start;
+  gap: 16px;
+
+ div {
+  border: 1px solid white;
+  width: 350px;
+  height: 46px;
+  margin-left: auto;
+}
+}
+
+.imgcontainer {
+  display: grid;
+  grid-area: planetPic;
+
+  place-items: center;
+
+  .planetPic {
+    margin: auto;
+  }
+}
+
+.planet--text {
+  grid-area: planetText;
+  width: 350px;
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+.main--source {
+  grid-area: source;
+  width: 350px;
+  margin-left: auto;
+  align-self: center;
+
+  span {
+    margin-right: 5px;
+  }
+  .wiki {
+    text-decoration: underline;
+  }
+}
+
+/*background color change for active boxes*/
+
+.mercury {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--mercuryinfobox);
+  }
+}
+.venus {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--venusinfobox);
+  }
+}
+
+.earth {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--earthinfobox);
+  }
+}
+.mars {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--marsinfobox);
+  }
+}
+
+.jupiter {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--jupiterinfobox);
+  }
+}
+
+.saturn {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--saturninfobox);
+  }
+}
+.uranus {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--uranusinfobox);
+  }
+}
+.neptune {
+  .overview-activeoverview,
+  .structure-activestructure,
+  .geology-activegeology {
+    background-color: var(--neptuneinfobox);
+  }
+}

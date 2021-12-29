@@ -1,25 +1,53 @@
 @import "Footer";
 @import "Main";
 @import "Header";
+@import "Mixins";
+
+*{
+box-sizing:border-box;
+
+}
 
 :root{
 --white:#FFFFFF;
 --Background:#070724;
+--mercuryinfobox:#419EBB;
+--venusinfobox:#EDA249;
+--earthinfobox:#6D2ED5;
+--marsinfobox:#D14C32;
+--jupiterinfobox:#D83A34;
+--saturninfobox:#CD5120;
+--uranusinfobox:#1EC1A2;
+--neptuneinfobox:#2D68F0;
+}
 
+
+html{
+margin:0px;
+padding:0px;
+height:100%;
 
 }
 
 body{
 background-image: url('background-stars.svg');
 background-color:var(--Background);
-color:var(--white)
+color:var(--white);
+margin:0px;
+padding:0px;
+height:100%;
     
 }
 
-.mercury{
-color:red;
+.App{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly
+    ;
 }
 
-.venus{
-    color:green;
+
+.bottom-container{
+    padding: 0px 160px;
 }
