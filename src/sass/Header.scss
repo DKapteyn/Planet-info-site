@@ -5,13 +5,17 @@
    
     @include desktop{
         display:flex;
+        border-bottom: 1px solid var(--bordergrey);
     }
 }
 
 .header--title{
     display:flex;
     justify-content: center;
-    min-width:300px;
+    min-width: max-content;
+    font-family: 'Antonio', sans-serif;
+    font-size:28px;
+    margin-left:32px;
     
 }
 
@@ -20,7 +24,10 @@
     list-style-type: none;
     justify-content: flex-end;
     align-items: center;
-    width:100%
+    width:100%;
+    font-family: 'Spartan', sans-serif;
+    font-size:10.5px;
+    font-weight: 700;
     
 
 }

@@ -45,19 +45,22 @@ export default function Main(props) {
             className={`overview${planetState.background}`}
             onClick={handleOverview}
           >
-            OVERVIEW
+            <p className="infonumber">01</p>
+            <p className="infoname">OVERVIEW</p> 
           </div>
           <div
             className={`structure${planetState.background}`}
             onClick={handleStructure}
           >
-            STRUCTURE
+             <p className="infonumber">02</p>
+            <p className="infoname">INTERNAL STRUCTURE</p> 
           </div>
           <div
             className={`geology${planetState.background}`}
             onClick={handleSurface}
           >
-            SURFACE
+               <p className="infonumber">03</p>
+            <p className="infoname">SURFACE GEOLOGY</p> 
           </div>
         </div>
 
@@ -76,7 +79,7 @@ export default function Main(props) {
           </p>
           </div>
           <div className="main--source">
-            <span>
+            <span className="source">
               Source:
             </span>
             <a href={planetData[props.planetNumber][planetState.para].source}>

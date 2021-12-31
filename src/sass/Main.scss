@@ -18,13 +18,49 @@
   grid-area: infoBoxes;
   align-self: flex-start;
   gap: 16px;
+ 
+  font-family: 'Spartan',sans-serif;
+  font-weight: 700;
+ 
+  
 
  div {
-  border: 1px solid white;
+  display:flex;
+  align-items: center;
+  border:1px solid var(--bordergrey);
   width: 350px;
-  height: 46px;
+  height: 48px;
   margin-left: auto;
+  font-size:12px;
+  
+  &:hover{
+    background-color: var(--bordergrey);
+  }
+
+
 }
+
+.infonumber{
+  margin-left:28px;
+  color: var(--textgrey);
+  
+}
+
+.infoname{
+  margin-left:28px;
+}
+
+}
+
+.main--title{
+  font-family: 'Antonio', sans-serif;
+  font-size: 80px;
+  margin-bottom: 23px;
+}
+
+.main--para{
+  font-size: 14px;
+  line-height: 25px;
 }
 
 .imgcontainer {
@@ -43,19 +79,25 @@
   width: 350px;
   margin-left: auto;
   align-self: flex-end;
+  font-family: 'Spartan', sans-serif;
 }
 
 .main--source {
   grid-area: source;
   width: 350px;
   margin-left: auto;
-  align-self: center;
+ 
+  font-family: 'Spartan', sans-serif;
+  
 
   span {
     margin-right: 5px;
+    font-weight: 400;
+    font-size:13px;
   }
   .wiki {
     text-decoration: underline;
+    font-weight:700;
   }
 }
 
