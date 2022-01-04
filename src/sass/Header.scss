@@ -1,42 +1,95 @@
 @import "Mixins";
 
-.header--container{
-   font-family: anto;
-   
-    @include desktop{
-        display:flex;
-        border-bottom: 1px solid var(--bordergrey);
-    }
+.header--container {
+  font-family: anto;
+
+  @include desktop {
+    display: flex;
+    border-bottom: 1px solid var(--bordergrey);
+  }
 }
 
-.header--title{
-    display:flex;
-    justify-content: center;
-    min-width: max-content;
-    font-family: 'Antonio', sans-serif;
-    font-size:28px;
-    margin-left:32px;
-    
+.header--title {
+  display: flex;
+  justify-content: center;
+  min-width: max-content;
+  font-family: "Antonio", sans-serif;
+  font-size: 28px;
+  margin-left: 32px;
 }
 
-.header--planetlist{
-    display:flex;
-    list-style-type: none;
+.header--planetlist {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  width: 100%;
+  font-family: "Spartan", sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+
+  @include desktop {
     justify-content: flex-end;
-    align-items: center;
-    width:100%;
-    font-family: 'Spartan', sans-serif;
-    font-size:10.5px;
-    font-weight: 700;
-    
-
+  }
+  @include tablet {
+    justify-content: space-evenly;
+  }
 }
 
-a{
-    text-decoration: none;
-    color:white;
-    @include desktop{
-    margin-right:33px
-    }
 
+
+
+a {
+  text-decoration: none;
+  color: white;
+  padding-top:28px;
+ 
+
+  @include desktop {
+    margin-right: 33px;
+  }
+}
+
+
+// color change for top border 
+
+.header--colorChangeMercury{
+  a:hover{
+    border-top: 3px solid var(--mercuryinfobox)
+}
+}
+.header--colorChangeVenus{
+  a:hover{
+    border-top: 3px solid var(--venusinfobox)
+}
+}
+
+.header--colorChangeEarth{
+    a:hover{
+      border-top: 3px solid var(--earthinfobox)
+}
+}
+.header--colorChangeMars{
+  a:hover{
+    border-top: 3px solid var(--marsinfobox)
+}
+}
+.header--colorChangeJupiter{
+  a:hover{
+    border-top: 3px solid var(--jupiterinfobox)
+}
+}
+.header--colorChangeSaturn{
+  a:hover{
+    border-top: 3px solid var(--saturninfobox)
+}
+}
+.header--colorChangeUranus{
+  a:hover{
+    border-top: 3px solid var(--uranusinfobox)
+}
+}
+.header--colorChangeNeptune{
+  a:hover{
+    border-top: 3px solid var(--neptuneinfobox)
+}
 }

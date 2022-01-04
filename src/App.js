@@ -7,12 +7,27 @@ import {
   Navigate,
 } from "react-router-dom";
 import Planet from "./pages/Planet";
+import { useState } from "react";
 
 function App() {
+
+const [color, setColor] = useState('Earth');
+
+
+
+function changeColor(planetname){
+  setColor(planetname)
+}
+
+
   return (
     <div className="App">
     <Router>
-      <Header />
+      <Header
+      color = {color}
+      changeColor = {changeColor}
+
+      />
         
         <Routes>
           <Route path="/" element={<Navigate to="Earth" />} />
