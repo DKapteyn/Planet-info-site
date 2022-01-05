@@ -6,7 +6,7 @@ export default function Main(props) {
     img: "planet",
     para: "overview",
     background: "-activeoverview",
-    img2: null
+    img2: null,
   });
 
   function handleOverview() {
@@ -14,7 +14,7 @@ export default function Main(props) {
       img: "planet",
       para: "overview",
       background: "-activeoverview",
-      img2:null
+      img2: null,
     });
   }
 
@@ -23,7 +23,7 @@ export default function Main(props) {
       img: "internal",
       para: "structure",
       background: "-activestructure",
-      img2: null
+      img2: null,
     });
   }
 
@@ -32,7 +32,7 @@ export default function Main(props) {
       img: "planet",
       para: "geology",
       background: "-activegeology",
-      img2: "geology"
+      img2: "geology",
     });
   }
 
@@ -68,16 +68,17 @@ export default function Main(props) {
           alt="Outer planet"
           className="planetPic"
         />
-        { planetState.img2 !== null && <img 
-         src = {planetData[props.planetNumber].images[planetState.img2]}
-         alt=""
-          className="secondPlanetPic"
-        />}
-
+        {planetState.img2 !== null && (
+          <img
+            src={planetData[props.planetNumber].images[planetState.img2]}
+            alt=""
+            className="secondPlanetPic"
+          />
+        )}
       </div>
 
       <div className="planet--text">
-        <h1 className="main--title">{planetData[props.planetNumber].name}</h1>
+        <h1 className="main--title">{planetData[props.planetNumber].name.toUpperCase()}</h1>
         <p className="main--para">
           {planetData[props.planetNumber][planetState.para].content}
         </p>
@@ -85,7 +86,11 @@ export default function Main(props) {
           <span className="source">Source:</span>
           <a href={planetData[props.planetNumber][planetState.para].source}>
             <span className="wiki">Wikipidia</span>
-            <img src="/assets/icon-source.svg" alt="arrow" />
+            <img
+              className="arrowPic"
+              src="/assets/icon-source.svg"
+              alt="arrow"
+            />
           </a>
         </div>
       </div>
