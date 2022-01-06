@@ -19,85 +19,16 @@
 
     padding: 0px 40px;
   }
-}
 
-.infoBoxes {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  grid-area: infoBoxes;
-  gap: 16px;
-  font-family: "Spartan", sans-serif;
-  font-weight: 700;
-  @include desktop {
-    align-self: flex-start;
-    margin-bottom: 90px;
-  }
-  @include tablet {
-    align-self: center;
-    margin-top: 40px;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--bordergrey);
-    margin-left: auto;
-
-    @include desktop {
-      width: 350px;
-      height: 48px;
-      font-size: 12px;
-    }
-
-    @include tablet {
-      width: 281px;
-      height: 40px;
-      font-size: 9px;
-      //margin-left: 56px;
-    }
-
-    &:hover {
-      background-color: var(--bordergrey);
-    }
-  }
-
-  .infonumber {
-    margin-left: 28px;
-    color: var(--textgrey);
-  }
-
-  .infoname {
-    margin-left: 28px;
+  @include mobile {
+    grid-template-areas:
+      "infoBoxes"
+      "planetPic"
+      "planetText";
   }
 }
 
-.main--title {
-  font-family: "Antonio", sans-serif;
-  
-  margin-bottom:0px;
-
-  @include desktop {
-    font-size: 80px;
-    margin-top:100px;
-  }
-
-  @include tablet {
-    font-size: 48px;
-    margin-top:0px;
-  }
-}
-
-.main--para {
-  @include desktop {
-    font-size: 14px;
-    line-height: 25px;
-  }
-  @include tablet {
-    font-size: 11px;
-    line-height: 22px;
-  }
-}
+//CONTAINER FOR PLANET PICTURE
 
 .imgcontainer {
   display: grid;
@@ -114,58 +45,209 @@
     max-height: 445px;
   }
 
-  .planetPic,
-  .secondPlanetPic {
-    grid-row: 2/3;
-    grid-column: 2/3;
+  @include mobile {
+    height: 305px;
+    max-width: 375px;
+    place-self: center;
+  }
+}
+
+//MAIN PLANET PIC (planetPic) AND SURFACE GEOLOGY PIC (secondPlanetPic) THAT OVERLAPS
+
+.planetPic,
+.secondPlanetPic {
+  grid-row: 2/3;
+  grid-column: 2/3;
+
+  @include tablet {
+    transform: scale(0.638);
+  }
+
+  @include mobile {
+    transform: scale(0.384);
+  }
+}
+
+.planetPic {
+  place-self: center;
+}
+
+.secondPlanetPic {
+  height: 199px;
+  width: 163px;
+  place-self: center;
+  @include desktop {
+    margin-top: 370px;
+  }
+  @include tablet {
+    margin-top: 200px;
+  }
+  @include mobile {
+    margin-top: 140px;
+  }
+}
+
+//OVERVIEW,STRUCTURE AND SURFACE BOXES
+
+
+.infoBoxes {
+  display: flex;
+  grid-area: infoBoxes;
+  gap: 16px;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  @include desktop {
+    align-self: flex-start;
+    margin-bottom: 90px;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  @include tablet {
+    align-self: center;
+    margin-top: 40px;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  @include mobile {
+    border-bottom: 1px solid var(--bordergrey);
+    justify-content: space-between;
+    padding: 20px 24px 3px 24px;
+  }
+
+  .iBox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include desktop {
+      width: 350px;
+      height: 48px;
+      font-size: 12px;
+      border: 1px solid var(--bordergrey);
+      margin-left: auto;
+    }
 
     @include tablet {
-      transform: scale(0.638);
+      width: 281px;
+      height: 40px;
+      font-size: 9px;
+      border: 1px solid var(--bordergrey);
+      margin-left: auto;
     }
 
     @include mobile {
-      transform: scale(0.384);
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--textgrey);
+    }
+
+    &:hover {
+      @include desktop-tablet {
+        background-color: var(--bordergrey);
+      }
     }
   }
 
-  .planetPic {
-    place-self: center;
+  .infonumber {
+    @include desktop-tablet {
+      margin-left: 28px;
+      color: var(--textgrey);
+    }
+    @include mobile {
+      display: none;
+    }
   }
 
-  .secondPlanetPic {
-    // margin-top: 250px;
-    height: 199px;
-    width: 163px;
-    place-self: center;
-    @include desktop {
-      margin-top: 370px;
+ //BOX NAMES FOR DESKTOP AND TABLET
+
+  .infoname {
+    @include desktop-tablet {
+      margin-left: 28px;
     }
-    @include tablet {
-      margin-top: 200px;
+    @include mobile {
+      display: none;
     }
   }
 }
+
+//BOX NAMES FOR MOBILE
+
+.infonamemobile {
+  height: 100%;
+  @include desktop-tablet {
+    display: none;
+  }
+}
+
+//PLANET INFORMATION TEXT
+
+
+//CONTAINER FOR TITLE, PARA AND SOURCE
 
 .planet--text {
   display: flex;
   flex-direction: column;
   grid-area: planetText;
-  width: 350px;
-  
-  align-self: flex-end;
+
   font-family: "Spartan", sans-serif;
-@include desktop{
-  margin-left: auto;
+  @include desktop-tablet {
+    width: 350px;
+  }
+
+  @include desktop {
+    margin-left: auto;
+  }
+
+  @include mobile {
+    align-items: center;
+    margin: 0px 24px;
+  }
 }
 
+
+//PLANET NAME 
+
+.main--title {
+  font-family: "Antonio", sans-serif;
+
+  margin-bottom: 0px;
+
+  @include desktop {
+    font-size: 80px;
+    margin-top: 100px;
+  }
+
+  @include tablet {
+    font-size: 48px;
+    margin-top: 0px;
+  }
 }
+@include mobile {
+  font-size: 40px;
+}
+
+//PLANET INFORMATION PARAGRAPH
+.main--para {
+  @include desktop {
+    font-size: 14px;
+    line-height: 25px;
+  }
+  @include tablet-mobile {
+    font-size: 11px;
+    line-height: 22px;
+  }
+}
+
+//WIKIPIDIA LINK
 
 .main--source {
   grid-area: source;
-  width: 350px;
-  margin-left: auto;
 
   font-family: "Spartan", sans-serif;
+  @include desktop-tablet {
+    width: 350px;
+    margin-left: auto;
+  }
 
   span {
     margin-right: 5px;
@@ -176,7 +258,7 @@
       font-size: 13px;
     }
 
-    @include tablet {
+    @include tablet-mobile {
       font-size: 11px;
     }
   }
@@ -196,14 +278,25 @@
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--mercuryinfobox);
+    @include desktop-tablet {
+      background-color: var(--mercuryinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--mercuryinfobox);
+    }
   }
 }
+
 .venus {
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--venusinfobox);
+    @include desktop-tablet {
+      background-color: var(--venusinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--venusinfobox);
+    }
   }
 }
 
@@ -211,14 +304,24 @@
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--earthinfobox);
+    @include desktop-tablet {
+      background-color: var(--earthinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--earthinfobox);
+    }
   }
 }
 .mars {
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--marsinfobox);
+    @include desktop-tablet {
+      background-color: var(--marsinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--marsinfobox);
+    }
   }
 }
 
@@ -226,7 +329,12 @@
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--jupiterinfobox);
+    @include desktop-tablet {
+      background-color: var(--jupiterinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--jupiterinfobox);
+    }
   }
 }
 
@@ -234,20 +342,35 @@
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--saturninfobox);
+    @include desktop-tablet {
+      background-color: var(--saturninfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--saturninfobox);
+    }
   }
 }
 .uranus {
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--uranusinfobox);
+    @include desktop-tablet {
+      background-color: var(--uranusinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 4px 0 0 var(--uranusinfobox);
+    }
   }
 }
 .neptune {
   .overview-activeoverview,
   .structure-activestructure,
   .geology-activegeology {
-    background-color: var(--neptuneinfobox);
+    @include desktop-tablet {
+      background-color: var(--neptumeinfobox);
+    }
+    @include mobile {
+      box-shadow: 0 2px 0 0 var(--neptumeinfobox);
+    }
   }
 }

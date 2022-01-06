@@ -5,11 +5,20 @@
   border-bottom: 1px solid var(--bordergrey);
   @include desktop {
     display: flex;
+    padding: 0px 41px 0px 31px;
   }
   @include tablet {
     padding-bottom: 20px;
+
+  }
+  @include mobile{
+    display:flex;
+    justify-content: space-between;
+    padding:0px 24px;
   }
 }
+
+//PLANET TITLE
 
 .header--title {
   display: flex;
@@ -17,8 +26,10 @@
   min-width: max-content;
   font-family: "Antonio", sans-serif;
   font-size: 28px;
-  margin-left: 32px;
+ 
 }
+
+//PLANET LIST 
 
 .header--planetlist {
   display: flex;
@@ -31,42 +42,57 @@
 
   @include desktop {
     justify-content: flex-end;
+    gap:33px;
   }
   @include tablet {
     justify-content: space-evenly;
     padding-top: 21px;
   }
+
+@include mobile{
+  display:none;
+}
 }
 
 a {
   text-decoration: none;
   color: white;
   padding-top: 28px;
+  padding-bottom:28px;
 
-  @include desktop {
-    margin-right: 33px;
-  }
+  
 }
 
-// color change for top border
+//HAMBURGER ICON
+
+.header--img{
+@include desktop-tablet{
+  display:none;
+}
+@include mobile{
+  align-self: center;
+}
+}
+
+// HOVER COLOR CHANGE FOR PLANET LIST 
 
 .header--colorChangeMercury {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--mercuryinfobox);
+      border-top: 4px solid var(--mercuryinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--mercuryinfobox);
+      border-bottom: 4px solid var(--mercuryinfobox);
     }
   }
 }
 .header--colorChangeVenus {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--venusinfobox);
+      border-top: 4px solid var(--venusinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--venusinfobox);
+      border-bottom: 4px solid var(--venusinfobox);
     }
   }
 }
@@ -74,60 +100,60 @@ a {
 .header--colorChangeEarth {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--earthinfobox);
+      border-top: 4px solid var(--earthinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--earthinfobox);
+      border-bottom: 4px solid var(--earthinfobox);
     }
   }
 }
 .header--colorChangeMars {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--marsinfobox);
+      border-top: 4px solid var(--marsinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--marsinfobox);
+      border-bottom: 4px solid var(--marsinfobox);
     }
   }
 }
 .header--colorChangeJupiter {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--jupiterinfobox);
+      border-top: 4px solid var(--jupiterinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--jupiterinfobox);
+      border-bottom: 4px solid var(--jupiterinfobox);
     }
   }
 }
 .header--colorChangeSaturn {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--saturninfobox);
+      border-top: 4px solid var(--saturninfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--saturninfobox);
+      border-bottom: 4px solid var(--saturninfobox);
     }
   }
 }
 .header--colorChangeUranus {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--uranusinfobox);
+      border-top: 4px solid var(--uranusinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--uranusinfobox);
+      border-bottom: 4px solid var(--uranusinfobox);
     }
   }
 }
 .header--colorChangeNeptune {
   a:hover {
     @include desktop {
-      border-top: 3px solid var(--neptuneinfobox);
+      border-top: 4px solid var(--neptuneinfobox);
     }
     @include tablet {
-      border-bottom: 3px solid var(--neptuneinfobox);
+      border-bottom: 4px solid var(--neptuneinfobox);
     }
   }
 }

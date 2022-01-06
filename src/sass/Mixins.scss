@@ -5,19 +5,25 @@
 }
 
 @mixin desktop-tablet{
-    @media (min-width: 375px){
+    @media (min-width: 550px){
         @content;
     }
 }
 
 @mixin tablet{
-    @media (min-width:375px) and (max-width: 1099px){
+    @media (min-width:550px) and (max-width: 1099px){
+        @content;
+    }
+}
+
+@mixin tablet-mobile{
+    @media  (max-width: 1099px){
         @content;
     }
 }
 
 @mixin mobile{
-    @media (max-width:374px){
+    @media (max-width:549px){
         @content;
     }
 }
