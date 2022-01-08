@@ -8,53 +8,68 @@
     padding: 0px 41px 0px 31px;
   }
   @include tablet {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 
   }
   @include mobile{
-    display:flex;
-    justify-content: space-between;
-    padding:0px 24px;
+  
+   padding:0px 24px;
+   
+   
+    display:grid;
+    
   }
 }
 
 //PLANET TITLE
 
 .header--title {
+ grid-area:headertitle;
+ 
   display: flex;
   justify-content: center;
   min-width: max-content;
   font-family: "Antonio", sans-serif;
   font-size: 28px;
+  margin-right: auto;
  
 }
 
 //PLANET LIST 
 
 .header--planetlist {
-  display: flex;
+  
   list-style-type: none;
-  align-items: center;
+
   width: 100%;
   font-family: "Spartan", sans-serif;
   font-size: 10.5px;
   font-weight: 700;
 
   @include desktop {
+    display:flex;
+    
     justify-content: flex-end;
     gap:33px;
+    align-items: center;
   }
   @include tablet {
+    display:flex;
     justify-content: space-evenly;
     padding-top: 21px;
+    align-items: center;
   }
 
 @include mobile{
-  display:none;
-}
+  display:none
+
+
 }
 
-a {
+
+
+
+ a {
   text-decoration: none;
   color: white;
   padding-top: 28px;
@@ -62,17 +77,23 @@ a {
 
   
 }
+}
 
 //HAMBURGER ICON
 
 .header--img{
+grid-area: hamburger;
+
 @include desktop-tablet{
   display:none;
 }
 @include mobile{
+  margin-left: auto;
   align-self: center;
+  
 }
 }
+
 
 // HOVER COLOR CHANGE FOR PLANET LIST 
 
@@ -84,6 +105,7 @@ a {
     @include tablet {
       border-bottom: 4px solid var(--mercuryinfobox);
     }
+ 
   }
 }
 .header--colorChangeVenus {

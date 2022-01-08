@@ -1,4 +1,4 @@
-export default [
+const planetData = [
   {
     "name": "Mercury",
     "overview": {
@@ -192,3 +192,4 @@ export default [
     }
   }
 ]
+export default planetData

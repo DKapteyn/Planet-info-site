@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 export default function Header(props) {
   return (
     <div className="header--container">
@@ -10,7 +11,9 @@ export default function Header(props) {
           className="header--planet"
           onClick={() => props.changeColor("Mercury")}
         >
-          <Link to="Mercury">MERCURY</Link>
+          <Link to="Mercury">
+           MERCURY
+            </Link>
         </li>
         <li
           className="header--planets"
@@ -40,23 +43,30 @@ export default function Header(props) {
           className="header--planets"
           onClick={() => props.changeColor("Saturn")}
         >
-          <Link to="Saturn">SATURN</Link>
+          <Link to="Saturn">
+            SATURN
+          </Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Uranus")}
         >
-          <Link to="Uranus">URANUS</Link>
+          <Link to="Uranus">
+             URANUS
+             </Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Neptune")}
         >
-          <Link to="Neptune">NEPTUNE</Link>
+          <Link to="Neptune">
+            NEPTUNE
+            </Link>
         </li>
       </ul>
 
       <img
+      onClick={() => props.changeDropDown()}
         src="/assets/icon-hamburger.svg"
         alt="hamburger-icon"
         className="header--img"
@@ -64,3 +74,5 @@ export default function Header(props) {
     </div>
   );
 }
+
+
