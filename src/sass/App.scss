@@ -55,3 +55,18 @@ height:100%;
 .bottom-container{
     padding: 0px 160px;
 }
+
+//using dropdown vibility to become invisible
+
+.planetdropDown{
+   @include mobile{
+    
+    transition: 500ms;
+    transform:scaleY(0);
+    height:0px;
+}
+}
+
+.planetnoDropDown{
+    transition: 100ms;
+}

@@ -367,10 +367,10 @@
   .structure-activestructure,
   .geology-activegeology {
     @include desktop-tablet {
-      background-color: var(--neptumeinfobox);
+      background-color: var(--neptuneinfobox);
     }
     @include mobile {
-      box-shadow: 0 2px 0 0 var(--neptumeinfobox);
+      box-shadow: 0 2px 0 0 var(--neptuneinfobox);
     }
   }
 }

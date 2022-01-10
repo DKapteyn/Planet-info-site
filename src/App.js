@@ -1,7 +1,5 @@
 import Header from "./components/Header";
 import Dropdown from "./components/DropDown";
-
-
 import "./sass/App.scss";
 import {
   BrowserRouter as Router,
@@ -10,20 +8,24 @@ import {
   Navigate,
 } from "react-router-dom";
 import Planet from "./pages/Planet";
-import { useState } from "react";
+import { useState, createContext} from "react";
+
+export const dropDownContext = createContext("")
 
 function App() {
 
 const [color, setColor] = useState('Earth');
-const [dropDown, setDropDown] = useState(false)
+const [dropDownVisibility, setDropDownVisibility] = useState("noDropDown")
 
 
 function changeColor(planetname){
   setColor(planetname)
 }
 
+//Changes the visibility of planets and dropdown menu when clicked
+
 function changeDropDown(){
-  setDropDown(!dropDown)
+  setDropDownVisibility(prevDD => prevDD === "noDropDown"? "dropDown":"noDropDown")
   
 }
 
@@ -31,53 +33,60 @@ function changeDropDown(){
   return (
     <div className="App">
     <Router>
+    
        <Header
       color = {color}
       changeColor = {changeColor}
       changeDropDown = {changeDropDown}
       /> 
 
-    {dropDown && <Dropdown
-    changeDropDown = {changeDropDown}
-    />}
+     <dropDownContext.Provider value={dropDownVisibility}>  
+     <Dropdown
+     changeDropDown = {changeDropDown}
+     dropDownVisibility = {dropDownVisibility}
+     />
+    
+
+      
         
         <Routes>
           <Route path="/" element={<Navigate to="Earth" />} />
           <Route
             path="Mercury"
-            element={<Planet dropDown={dropDown} class="mercury" planetNumber={0} />}
+            element={<Planet class="mercury" planetNumber={0} />}
           />
           <Route
             path="Venus"
-            element={<Planet dropDown={dropDown} planetNumber={1} class="venus" />}
+            element={<Planet planetNumber={1} class="venus" />}
           />
           <Route
             path="Earth"
-            element={<Planet dropDown={dropDown} planetNumber={2} class="earth" />}
+            element={<Planet  planetNumber={2} class="earth" />}
           />
           <Route
             path="Mars"
-            element={<Planet dropDown={dropDown} planetNumber={3} class="mars" />}
+            element={<Planet  planetNumber={3} class="mars" />}
           />
           <Route
             path="Jupiter"
-            element={<Planet dropDown={dropDown} planetNumber={4} class="jupiter" />}
+            element={<Planet  planetNumber={4} class="jupiter" />}
           />
           <Route
             path="Saturn"
-            element={<Planet dropDown={dropDown} planetNumber={5} class="saturn" />}
+            element={<Planet  planetNumber={5} class="saturn" />}
           />
           <Route
             path="Uranus"
-            element={<Planet dropDown={dropDown} planetNumber={6} class="uranus" />}
+            element={<Planet  planetNumber={6} class="uranus" />}
           />
           <Route
             path="Neptune"
-            element={<Planet dropDown={dropDown} planetNumber={7} class="neptune" />}
+            element={<Planet  planetNumber={7} class="neptune" />}
           />
         </Routes>
-       
+        </dropDownContext.Provider>
     </Router>
+   
     </div>
   );
 }
