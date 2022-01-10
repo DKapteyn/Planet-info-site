@@ -6,6 +6,8 @@
   @include desktop {
     display: flex;
     padding: 0px 41px 0px 31px;
+    
+   
   }
   @include tablet {
   padding-bottom: 20px;
@@ -82,7 +84,8 @@
 //HAMBURGER ICON
 
 .header--img{
-grid-area: hamburger;
+grid-area:hamburger;
+cursor: pointer;
 
 @include desktop-tablet{
   display:none;
@@ -90,9 +93,28 @@ grid-area: hamburger;
 @include mobile{
   margin-left: auto;
   align-self: center;
+  fill:var(--white)
+   
+}
+}
+
+// .header--imgnoDropDown{
   
+ 
+//   @include mobile{
+//   fill:var(--white);
+  
+// }
+// }
+
+
+
+.header--imgdropDown{ 
+ @include mobile{
+  opacity: 0.25;
 }
 }
+
 
 
 // HOVER COLOR CHANGE FOR PLANET LIST 

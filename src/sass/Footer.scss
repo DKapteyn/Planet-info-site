@@ -3,16 +3,21 @@
 //MAIN FOOTER CONTAINER
 .footer--container {
   display: flex;
+ 
 
   @include desktop {
     margin: 0px 165px 0px 165px;
     gap: 30px;
+   
   }
   @include tablet {
     margin: 30px 40px;
     height: 88px;
     gap: 30px;
+   
   }
+
+ 
   @include mobile {
     flex-direction: column;
     margin: 28px 24px 47px 24px;

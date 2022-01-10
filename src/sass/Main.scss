@@ -2,6 +2,7 @@
 
 .main--container {
   display: grid;
+  
   @include desktop {
     grid-template-areas:
       "planetPic  planetText"
@@ -35,21 +36,20 @@
   grid-area: planetPic;
   place-content: center;
   position: relative;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  place-self: center;
 
-  @include desktop {
-    max-height: 700px;
+  @include desktop{
+    height: 555px;
   }
-  @include tablet {
-    max-height: 445px;
+  @include tablet{
+    height:460px
+  }
+  @include mobile{
+    height:300px;
+    max-width:375px;
   }
 
-  @include mobile {
-    height: 305px;
-    max-width: 375px;
-    place-self: center;
-  }
+
 }
 
 //MAIN PLANET PIC (planetPic) AND SURFACE GEOLOGY PIC (secondPlanetPic) THAT OVERLAPS

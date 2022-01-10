@@ -1,13 +1,12 @@
-
 import { Link } from "react-router-dom";
-
-
+import { useContext } from "react";
+import { dropDownContext } from "../App";
 
 export default function Header(props) {
- 
- 
+  const dropDown = useContext(dropDownContext);
+
   return (
-    <div className="header--container">
+    <div className={`header--container`}>
       <h1 className="header--title">THE PLANETS</h1>
 
       <ul className={`header--colorChange${props.color} header--planetlist`}>
@@ -15,9 +14,7 @@ export default function Header(props) {
           className="header--planet"
           onClick={() => props.changeColor("Mercury")}
         >
-          <Link to="Mercury">
-           MERCURY
-            </Link>
+          <Link to="Mercury">MERCURY</Link>
         </li>
         <li
           className="header--planets"
@@ -47,36 +44,33 @@ export default function Header(props) {
           className="header--planets"
           onClick={() => props.changeColor("Saturn")}
         >
-          <Link to="Saturn">
-            SATURN
-          </Link>
+          <Link to="Saturn">SATURN</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Uranus")}
         >
-          <Link to="Uranus">
-             URANUS
-             </Link>
+          <Link to="Uranus">URANUS</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Neptune")}
         >
-          <Link to="Neptune">
-            NEPTUNE
-            </Link>
+          <Link to="Neptune">NEPTUNE</Link>
         </li>
       </ul>
 
-      <img
-      onClick={() => props.changeDropDown()}
-        src="/assets/icon-hamburger.svg"
-        alt="hamburger-icon"
-        className="header--img"
-      />
+      <svg
+        className={`header--img header--img${dropDown}`}
+        onClick={() => props.changeDropDown()}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="17"
+      >
+        <g fill-rule="evenodd">
+          <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+        </g>
+      </svg>
     </div>
   );
 }
-
-
