@@ -8,6 +8,7 @@
 *{
 box-sizing:border-box;
 
+
 }
 
 :root{
@@ -23,8 +24,15 @@ box-sizing:border-box;
 --neptuneinfobox:#2D68F0;
 --textgrey:#838391;
 --bordergrey:#38384F;   
-}
 
+//HIDES SCROLL BAR IN MOBILE
+@include mobile{
+scrollbar-width:none;
+&::-webkit-scrollbar {
+    display: none;
+  }
+}
+}
 
 html{
 margin:0px;
@@ -40,6 +48,8 @@ color:var(--white);
 margin:0px;
 padding:0px;
 height:100%;
+
+
     
 }
 
@@ -48,6 +58,7 @@ height:100%;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    
     
 }
 
