@@ -2,7 +2,6 @@ import planetData from "../Data";
 import React, { useState } from "react";
 
 export default function Main(props) {
-
   //STATE AND FUNCTIONS TO UPDATE AND CONTROL DATA FROM DATA.JS
 
   const [planetState, setPlanetState] = useState({
@@ -30,7 +29,6 @@ export default function Main(props) {
     });
   }
 
-
   function handleSurface() {
     setPlanetState({
       img: "planet",
@@ -39,7 +37,7 @@ export default function Main(props) {
       img2: "geology",
     });
   }
-
+  
   return (
     <div className="main--container">
       <div className="infoBoxes">
@@ -69,7 +67,7 @@ export default function Main(props) {
         </div>
       </div>
 
-      <div className="imgcontainer">
+      <div className="imgcontainer" onClick={handleOverview}>
         <img
           src={planetData[props.planetNumber].images[planetState.img]}
           alt="Outer planet"
@@ -85,7 +83,9 @@ export default function Main(props) {
       </div>
 
       <div className="planet--text">
-        <h1 className="main--title">{planetData[props.planetNumber].name.toUpperCase()}</h1>
+        <h1 className="main--title">
+          {planetData[props.planetNumber].name.toUpperCase()}
+        </h1>
         <p className="main--para">
           {planetData[props.planetNumber][planetState.para].content}
         </p>

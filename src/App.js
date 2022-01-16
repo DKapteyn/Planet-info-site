@@ -2,15 +2,18 @@ import Header from "./components/Header";
 import Dropdown from "./components/DropDown";
 import "./sass/App.scss";
 import {
-  BrowserRouter as Router,
+
   Routes,
   Route,
   Navigate,
+  useLocation
 } from "react-router-dom";
 import Planet from "./pages/Planet";
 import { useState, createContext } from "react";
+import {AnimatePresence} from 'framer-motion'
 
 export const dropDownContext = createContext("");
+
 
 function App() {
   //CHANGES COLORS BASED ON PLANET NAME
@@ -33,9 +36,11 @@ function App() {
     );
   }
 
+  const location = useLocation()
+
   return (
     <div className="App">
-      <Router>
+     
         <dropDownContext.Provider value={dropDownVisibility}>
           <Header
             color={color}
@@ -47,8 +52,8 @@ function App() {
             changeDropDown={changeDropDown}
             dropDownVisibility={dropDownVisibility}
           />
-
-          <Routes>
+        <AnimatePresence>
+          <Routes location={location} key={location.key}>
             <Route path="/" element={<Navigate to="Earth" />} />
             <Route
               path="Mercury"
@@ -83,8 +88,9 @@ function App() {
               element={<Planet planetNumber={7} class="neptune" />}
             />
           </Routes>
+         </AnimatePresence>
         </dropDownContext.Provider>
-      </Router>
+      
     </div>
   );
 }
