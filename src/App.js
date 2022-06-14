@@ -1,32 +1,23 @@
 import Header from "./components/Header";
 import Dropdown from "./components/DropDown";
 import "./sass/App.scss";
-import {
-
-  Routes,
-  Route,
-  Navigate,
-  useLocation
-} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Planet from "./pages/Planet";
 import { useState, createContext } from "react";
-import {AnimatePresence} from 'framer-motion'
+import { AnimatePresence } from "framer-motion";
 
 export const dropDownContext = createContext("");
-
 
 function App() {
   //CHANGES COLORS BASED ON PLANET NAME
   const [color, setColor] = useState("Earth");
-  
+
   function changeColor(planetname) {
     setColor(planetname);
   }
-  
-  //CHANGES CSS WHEN DROPDOWN MENU IS VISIBLE THROUGH THE "dropDownContext" 
-  const [dropDownVisibility, setDropDownVisibility] = useState("noDropDown");
 
-  
+  //CHANGES CSS WHEN DROPDOWN MENU IS VISIBLE THROUGH THE "dropDownContext"
+  const [dropDownVisibility, setDropDownVisibility] = useState("noDropDown");
 
   //Changes the visibility of planets and dropdown menu when clicked
 
@@ -36,22 +27,21 @@ function App() {
     );
   }
 
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <div className="App">
-     
-        <dropDownContext.Provider value={dropDownVisibility}>
-          <Header
-            color={color}
-            changeColor={changeColor}
-            changeDropDown={changeDropDown}
-          />
+      <dropDownContext.Provider value={dropDownVisibility}>
+        <Header
+          color={color}
+          changeColor={changeColor}
+          changeDropDown={changeDropDown}
+        />
 
-          <Dropdown
-            changeDropDown={changeDropDown}
-            dropDownVisibility={dropDownVisibility}
-          />
+        <Dropdown
+          changeDropDown={changeDropDown}
+          dropDownVisibility={dropDownVisibility}
+        />
         <AnimatePresence>
           <Routes location={location} key={location.key}>
             <Route path="/" element={<Navigate to="Earth" />} />
@@ -88,9 +78,8 @@ function App() {
               element={<Planet planetNumber={7} class="neptune" />}
             />
           </Routes>
-         </AnimatePresence>
-        </dropDownContext.Provider>
-      
+        </AnimatePresence>
+      </dropDownContext.Provider>
     </div>
   );
 }

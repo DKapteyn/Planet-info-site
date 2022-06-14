@@ -1,6 +1,6 @@
 import planetData from "../Data";
 import React, { useState } from "react";
-
+import { motion } from "framer-motion";
 export default function Main(props) {
   //STATE AND FUNCTIONS TO UPDATE AND CONTROL DATA FROM DATA.JS
 
@@ -37,18 +37,18 @@ export default function Main(props) {
       img2: "geology",
     });
   }
-  
+
   return (
     <div className="main--container">
       <div className="infoBoxes">
-        <div
+        <motion.div
           className={`overview${planetState.background} iBox`}
           onClick={handleOverview}
         >
           <p className="infonumber">01</p>
           <p className="infoname">OVERVIEW</p>
           <p className="infonamemobile">OVERVIEW</p>
-        </div>
+        </motion.div>
         <div
           className={`structure${planetState.background} iBox`}
           onClick={handleStructure}
@@ -68,13 +68,21 @@ export default function Main(props) {
       </div>
 
       <div className="imgcontainer" onClick={handleOverview}>
-        <img
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          key={planetState.img}
           src={planetData[props.planetNumber].images[planetState.img]}
           alt="Outer planet"
           className="planetPic"
         />
         {planetState.img2 !== null && (
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            key={planetState.img2}
             src={planetData[props.planetNumber].images[planetState.img2]}
             alt=""
             className="secondPlanetPic"
@@ -86,14 +94,20 @@ export default function Main(props) {
         <h1 className="main--title">
           {planetData[props.planetNumber].name.toUpperCase()}
         </h1>
-        <p className="main--para">
+        <motion.p
+          className="main--para"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          key={planetState.para}
+        >
           {planetData[props.planetNumber][planetState.para].content}
-        </p>
+        </motion.p>
         <div className="main--source">
           <span className="source">Source:</span>
           <a href={planetData[props.planetNumber][planetState.para].source}>
             <span className="wiki">Wikipidia</span>
-            <img
+            <motion.img
               className="arrowPic"
               src="/assets/icon-source.svg"
               alt="arrow"
