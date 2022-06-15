@@ -14,49 +14,49 @@ export default function Header(props) {
           className="header--planet"
           onClick={() => props.changeColor("Mercury")}
         >
-          <Link to="Mercury">MERCURY</Link>
+          <Link to=" /Planet-info-site/Mercury">MERCURY</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Venus")}
         >
-          <Link to="Venus">VENUS</Link>
+          <Link to="/Planet-info-site/Venus">VENUS</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Earth")}
         >
-          <Link to="Earth">EARTH</Link>
+          <Link to="/Planet-info-site/Earth">EARTH</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Mars")}
         >
-          <Link to="Mars">MARS</Link>
+          <Link to="/Planet-info-site/Mars">MARS</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Jupiter")}
         >
-          <Link to="Jupiter">JUPITER</Link>
+          <Link to="/Planet-info-site/Jupiter">JUPITER</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Saturn")}
         >
-          <Link to="Saturn">SATURN</Link>
+          <Link to="/Planet-info-site/Saturn">SATURN</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Uranus")}
         >
-          <Link to="Uranus">URANUS</Link>
+          <Link to="/Planet-info-site/Uranus">URANUS</Link>
         </li>
         <li
           className="header--planets"
           onClick={() => props.changeColor("Neptune")}
         >
-          <Link to="Neptune">NEPTUNE</Link>
+          <Link to="/Planet-info-site/Neptune">NEPTUNE</Link>
         </li>
       </ul>
 
