@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Planet-info-site/static/css/main.4a62c764.css",
-    "main.js": "/Planet-info-site/static/js/main.50ff4f36.js",
+    "main.js": "/Planet-info-site/static/js/main.eb2e9cee.js",
     "static/media/background-stars.svg": "/Planet-info-site/static/media/background-stars.f6233a6a8d2351c57f2b.svg",
     "index.html": "/Planet-info-site/index.html",
     "main.4a62c764.css.map": "/Planet-info-site/static/css/main.4a62c764.css.map",
-    "main.50ff4f36.js.map": "/Planet-info-site/static/js/main.50ff4f36.js.map"
+    "main.eb2e9cee.js.map": "/Planet-info-site/static/js/main.eb2e9cee.js.map"
   },
   "entrypoints": [
     "static/css/main.4a62c764.css",
-    "static/js/main.50ff4f36.js"
+    "static/js/main.eb2e9cee.js"
   ]
 }
