@@ -14,7 +14,7 @@ export default function Header(props) {
           className="header--planet"
           onClick={() => props.changeColor("Mercury")}
         >
-          <Link to=" /Planet-info-site/Mercury">MERCURY</Link>
+          <Link to="/Planet-info-site/Mercury">MERCURY</Link>
         </li>
         <li
           className="header--planets"
