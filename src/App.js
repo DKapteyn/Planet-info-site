@@ -44,37 +44,40 @@ function App() {
         />
         <AnimatePresence>
           <Routes location={location} key={location.key}>
-            <Route path="/" element={<Navigate to="Earth" />} />
             <Route
-              path="Mercury"
+              path="/Planet-info-site/"
+              element={<Navigate to="/Planet-info-site/Earth" />}
+            />
+            <Route
+              path="/Planet-info-site/Mercury"
               element={<Planet class="mercury" planetNumber={0} />}
             />
             <Route
-              path="Venus"
+              path="/Planet-info-site/Venus"
               element={<Planet planetNumber={1} class="venus" />}
             />
             <Route
-              path="Earth"
+              path="/Planet-info-site/Earth"
               element={<Planet planetNumber={2} class="earth" />}
             />
             <Route
-              path="Mars"
+              path="/Planet-info-site/Mars"
               element={<Planet planetNumber={3} class="mars" />}
             />
             <Route
-              path="Jupiter"
+              path="/Planet-info-site/Jupiter"
               element={<Planet planetNumber={4} class="jupiter" />}
             />
             <Route
-              path="Saturn"
+              path="/Planet-info-site/Saturn"
               element={<Planet planetNumber={5} class="saturn" />}
             />
             <Route
-              path="Uranus"
+              path="/Planet-info-site/Uranus"
               element={<Planet planetNumber={6} class="uranus" />}
             />
             <Route
-              path="Neptune"
+              path="/Planet-info-site/Neptune"
               element={<Planet planetNumber={7} class="neptune" />}
             />
           </Routes>
