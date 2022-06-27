@@ -3,72 +3,55 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { dropDownContext } from "../App";
 
-
-
-
-export default function Dropdown({changeDropDown }) {
+export default function Dropdown({ changeDropDown }) {
   return (
-    
-      <ul className="dropdown--listitems">
-        <li>
-          <Link to="Mercury">
-            <Listitems planetNumber={0} 
-       
-            changeDropDown = {changeDropDown}
-            />
-          </Link>
-        </li>
-        <li>
-          <Link to="Venus">
-            <Listitems planetNumber={1} 
-          changeDropDown = {changeDropDown} />
-          </Link>
-        </li>
-        <li>
-          <Link to="Earth">
-            <Listitems planetNumber={2} 
-            changeDropDown = {changeDropDown} />
-          </Link>
-        </li>
-        <li>
-          <Link to="Mars">
-            <Listitems planetNumber={3} 
-           changeDropDown = {changeDropDown} />
-          </Link>
-        </li>
-        <li>
-          <Link to="Jupiter">
-            <Listitems planetNumber={4}
-              changeDropDown = {changeDropDown} />
-          </Link>
-        </li>
-        <li>
-          <Link to="Saturn">
-            <Listitems planetNumber={5} 
-               changeDropDown = {changeDropDown}/>
-          </Link>
-        </li>
-        <li>
-          <Link to="Uranus">
-            <Listitems planetNumber={6} 
-              changeDropDown = {changeDropDown} />
-          </Link>
-        </li>
-        <li>
-          <Link to="Neptune">
-            <Listitems planetNumber={7} 
-         
-             changeDropDown = {changeDropDown} />
-          </Link>
-        </li>
-      </ul>
-    
+    <ul className="dropdown--listitems">
+      <li>
+        <Link to="/Planet-info-site/Mercury">
+          <Listitems planetNumber={0} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Venus">
+          <Listitems planetNumber={1} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Earth">
+          <Listitems planetNumber={2} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Mars">
+          <Listitems planetNumber={3} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Jupiter">
+          <Listitems planetNumber={4} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Saturn">
+          <Listitems planetNumber={5} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Uranus">
+          <Listitems planetNumber={6} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/Planet-info-site/Neptune">
+          <Listitems planetNumber={7} changeDropDown={changeDropDown} />
+        </Link>
+      </li>
+    </ul>
   );
 }
 
 function Listitems(props) {
-
-  const visible = useContext(dropDownContext)
+  const visible = useContext(dropDownContext);
   return (
     <div
       className={`dropdown-items${visible}`}

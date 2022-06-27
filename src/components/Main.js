@@ -105,11 +105,15 @@ export default function Main(props) {
         </motion.p>
         <div className="main--source">
           <span className="source">Source:</span>
-          <a href={planetData[props.planetNumber][planetState.para].source}>
+          <a
+            href={planetData[props.planetNumber][planetState.para].source}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="wiki">Wikipidia</span>
-            <motion.img
+            <img
               className="arrowPic"
-              src="/assets/icon-source.svg"
+              src="./assets/icon-source.svg"
               alt="arrow"
             />
           </a>
