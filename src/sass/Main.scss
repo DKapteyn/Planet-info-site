@@ -2,7 +2,7 @@
 
 .main--container {
   display: grid;
-  
+
   @include desktop {
     grid-template-areas:
       "planetPic  planetText"
@@ -17,7 +17,6 @@
     grid-template-areas:
       "planetPic planetPic"
       "planetText infoBoxes";
-
     padding: 0px 40px;
   }
 
@@ -37,19 +36,18 @@
   place-content: center;
   position: relative;
   place-self: center;
+  padding-right: 1rem;
 
-  @include desktop{
+  @include desktop {
     height: 555px;
   }
-  @include tablet{
-    height:460px
+  @include tablet {
+    height: 460px;
   }
-  @include mobile{
-    height:300px;
-    max-width:375px;
+  @include mobile {
+    height: 300px;
+    max-width: 375px;
   }
-
-
 }
 
 //MAIN PLANET PIC (planetPic) AND SURFACE GEOLOGY PIC (secondPlanetPic) THAT OVERLAPS
@@ -88,7 +86,6 @@
 }
 
 //OVERVIEW,STRUCTURE AND SURFACE BOXES
-
 
 .infoBoxes {
   display: flex;
@@ -158,7 +155,7 @@
     }
   }
 
- //BOX NAMES FOR DESKTOP AND TABLET
+  //BOX NAMES FOR DESKTOP AND TABLET
 
   .infoname {
     @include desktop-tablet {
@@ -180,7 +177,6 @@
 }
 
 //PLANET INFORMATION TEXT
-
 
 //CONTAINER FOR TITLE, PARA AND SOURCE
 
@@ -204,8 +200,7 @@
   }
 }
 
-
-//PLANET NAME 
+//PLANET NAME
 
 .main--title {
   font-family: "Antonio", sans-serif;
