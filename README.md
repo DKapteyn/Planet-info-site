@@ -1,3 +1,5 @@
+![Screenshot 2022-06-22 at 07-40-45 Planet Info App](https://user-images.githubusercontent.com/86522409/175043570-2ee75218-0205-47d0-9501-c0306f0894b1.png)
+
 # Planet-info-site
 
 ## Interactive 8 page information site with dynamic styling and animation.
@@ -11,4 +13,4 @@ This site was created using the following:
   * Sass
   * HTML5
 
-![Screenshot 2022-06-22 at 07-40-45 Planet Info App](https://user-images.githubusercontent.com/86522409/175043570-2ee75218-0205-47d0-9501-c0306f0894b1.png)
+
